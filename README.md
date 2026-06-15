@@ -4,3 +4,4 @@
 
 无开源作用
 
+https://old-autumn.github.io/manual/
