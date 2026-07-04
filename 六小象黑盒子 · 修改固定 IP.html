@@ -138,6 +138,51 @@
       flex-wrap: wrap;
     }
 
+    .info-card .card-title {
+      font-size: 14px;
+      gap: 8px;
+      flex-wrap: nowrap;
+    }
+
+    .info-card .card-title .step-badge {
+      width: 24px;
+      height: 24px;
+      font-size: 12px;
+    }
+
+    /* ── 绑定信息卡片：标签在上、值在下的堆叠排版 ── */
+    .info-card .cred-table tr {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .info-card .cred-table tr:last-child { border-bottom: none; }
+
+    .info-card .cred-table td {
+      display: block;
+      padding: 0;
+      border: none;
+    }
+
+    .info-card .cred-table .label {
+      width: auto;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: .3px;
+      color: var(--text-muted);
+      white-space: normal;
+    }
+
+    .info-card .cred-table code {
+      display: inline-block;
+      font-size: 13.5px;
+      line-height: 1.5;
+      word-break: break-word;
+    }
+
     /* ── 步骤列表 ── */
     .steps { list-style: none; }
 
@@ -236,6 +281,7 @@
       border-radius: 5px;
       cursor: pointer;
       transition: all .2s;
+      white-space: nowrap;
       /* 手机端更好点击 */
       min-height: 28px;
       min-width: 56px;
@@ -618,10 +664,10 @@
 
   <!-- 卡片 1：账号密码 & 六小象绑定信息 -->
   <div class="card" style="display:none"></div>
-  <div class="card" style="padding:0;overflow:hidden;">
+  <div class="card info-card" style="padding:0;overflow:hidden;">
     <div style="display:flex;flex-wrap:wrap;">
       <!-- 左侧：小盒子登录凭证 -->
-      <div style="flex:1;padding:24px 28px;min-width:280px;border-right:1px solid var(--border);">
+      <div style="flex:1;padding:22px 22px;min-width:225px;border-right:1px solid var(--border);">
         <div class="card-title" style="margin-bottom:14px;">
           <div class="step-badge">🔑</div>
           小盒子登录凭证
@@ -656,21 +702,21 @@
           </tr>
         </table>
       </div>
-      <!-- 右侧：六小象绑定信息 -->
-      <div style="flex:1;padding:24px 28px;min-width:280px;background:#fafbfc;">
+      <!-- 中间：绑定信息 V2.0 -->
+      <div style="flex:1;padding:22px 22px;min-width:225px;background:#fafbfc;border-right:1px solid var(--border);">
         <div class="card-title" style="margin-bottom:14px;">
           <div class="step-badge">🔗</div>
-          六小象绑定信息
-          <button class="copy-btn sm" onclick="copyAllInfo()" style="margin-left:auto;">📋 一键复制全部</button>
+          绑定信息 V2.0
+          <button class="copy-btn sm" onclick="copyV2Info(this)" style="margin-left:auto;">复制</button>
         </div>
         <table class="cred-table">
           <tr>
             <td class="label">智库名称</td>
-            <td><code>川赢测试-2</code></td>
+            <td><code>川赢测试</code></td>
           </tr>
           <tr>
             <td class="label">门店编号</td>
-            <td><code>iz137611</code></td>
+            <td><code>iz137236</code></td>
           </tr>
           <tr>
             <td class="label">小盒子底部拍照</td>
@@ -678,11 +724,11 @@
           </tr>
           <tr>
             <td class="label">外网IP</td>
-            <td><code>14.19.38.167</code></td>
+            <td><code>14.19.138.67</code></td>
           </tr>
           <tr>
             <td class="label">录像机IP</td>
-            <td><code>192.168.8.125</code></td>
+            <td><code>192.168.1.25</code></td>
           </tr>
           <tr>
             <td class="label">录像机账号</td>
@@ -690,11 +736,49 @@
           </tr>
           <tr>
             <td class="label">录像机密码</td>
-            <td><code>a12345678</code></td>
+            <td><code>A123456</code></td>
           </tr>
           <tr>
             <td class="label">录像机品牌</td>
             <td><code>大华</code></td>
+          </tr>
+        </table>
+      </div>
+      <!-- 右侧：绑定信息 V3.0 -->
+      <div style="flex:1;padding:22px 22px;min-width:225px;background:#fafbfc;">
+        <div class="card-title" style="margin-bottom:14px;">
+          <div class="step-badge">🔗</div>
+          绑定信息 V3.0
+          <button class="copy-btn sm" onclick="copyV3Info(this)" style="margin-left:auto;">复制</button>
+        </div>
+        <table class="cred-table">
+          <tr>
+            <td class="label">智库平台名称</td>
+            <td><code>川赢测试</code></td>
+          </tr>
+          <tr>
+            <td class="label">门店编号</td>
+            <td><code>ae11922</code></td>
+          </tr>
+          <tr>
+            <td class="label">小盒子底部拍照</td>
+            <td><code>（编码）或（配置工控机）</code></td>
+          </tr>
+          <tr>
+            <td class="label">外网IP</td>
+            <td><code>14.19.138.167</code></td>
+          </tr>
+          <tr>
+            <td class="label">ivss IP</td>
+            <td><code>192.168.1.73</code></td>
+          </tr>
+          <tr>
+            <td class="label">ivss 账号</td>
+            <td><code>admin</code></td>
+          </tr>
+          <tr>
+            <td class="label">ivss 密码</td>
+            <td><code>A123456</code></td>
           </tr>
         </table>
       </div>
@@ -937,20 +1021,9 @@ EOF</pre>
     document.getElementById('singleQrModal').classList.remove('active');
   }
 
-  function copyAllInfo() {
-    const text = `智库名称：川赢测试-2
-门店编号：iz137611
-小盒子底部拍照：（编码）
-外网IP：14.19.38.167
-录像机IP：192.168.8.125
-录像机账号：admin
-录像机密码：a12345678
-录像机品牌：大华`;
+  function copyText(text, btn) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(() => {
-        const btn = document.querySelector('.card-title .copy-btn');
-        showCopied(btn);
-      });
+      navigator.clipboard.writeText(text).then(() => showCopied(btn));
     } else {
       const ta = document.createElement('textarea');
       ta.value = text;
@@ -960,9 +1033,33 @@ EOF</pre>
       ta.select();
       document.execCommand('copy');
       document.body.removeChild(ta);
-      const btn = document.querySelector('.card-title .copy-btn');
       showCopied(btn);
     }
+  }
+
+  function copyV2Info(btn) {
+    const text = `【V2.0】
+智库名称：川赢测试-2
+门店编号：iz137611
+小盒子底部拍照：（编码）
+外网IP：14.19.38.167
+录像机IP：192.168.8.125
+录像机账号：admin
+录像机密码：a12345678
+录像机品牌：大华`;
+    copyText(text, btn);
+  }
+
+  function copyV3Info(btn) {
+    const text = `【V3.0】
+智库平台名称：川赢测
+门店编号：ae119
+小盒子底部拍照：（或配置工控机）
+外网IP：14.19.35.168
+ivss IP：192.168.8.173
+ivss 账号：admin
+ivss 密码：A12345678`;
+    copyText(text, btn);
   }
 
   // 点击遮罩层 / ESC 键关闭
