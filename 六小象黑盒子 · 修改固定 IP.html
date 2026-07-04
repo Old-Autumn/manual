@@ -707,7 +707,7 @@
         <div class="card-title" style="margin-bottom:14px;">
           <div class="step-badge">🔗</div>
           绑定信息 V2.0
-          <button class="copy-btn sm" onclick="copyV2Info(this)" style="margin-left:auto;">复制</button>
+          <button class="copy-btn sm" onclick="copyV2Info(this)" style="margin-left:auto;">复制格式</button>
         </div>
         <table class="cred-table">
           <tr>
@@ -749,7 +749,7 @@
         <div class="card-title" style="margin-bottom:14px;">
           <div class="step-badge">🔗</div>
           绑定信息 V3.0
-          <button class="copy-btn sm" onclick="copyV3Info(this)" style="margin-left:auto;">复制</button>
+          <button class="copy-btn sm" onclick="copyV3Info(this)" style="margin-left:auto;">复制格式</button>
         </div>
         <table class="cred-table">
           <tr>
@@ -1038,27 +1038,27 @@ EOF</pre>
   }
 
   function copyV2Info(btn) {
-    const text = `【V2.0】
-智库名称：川赢测试-2
-门店编号：iz137611
+    const text = `【V2.0绑定信息】
+智库名称：
+门店编号：
 小盒子底部拍照：（编码）
-外网IP：14.19.38.167
-录像机IP：192.168.8.125
-录像机账号：admin
-录像机密码：a12345678
-录像机品牌：大华`;
+外网IP：
+录像机IP：
+录像机账号：
+录像机密码：
+录像机品牌：`;
     copyText(text, btn);
   }
 
   function copyV3Info(btn) {
-    const text = `【V3.0】
-智库平台名称：川赢测
-门店编号：ae119
-小盒子底部拍照：（或配置工控机）
-外网IP：14.19.35.168
-ivss IP：192.168.8.173
-ivss 账号：admin
-ivss 密码：A12345678`;
+    const text = `【V3.0绑定信息】
+智库平台名称：
+门店编号：
+小盒子底部拍照：（编码）或（配置工控机）
+外网IP：
+ivss IP：
+ivss 账号：
+ivss 密码：`;
     copyText(text, btn);
   }
 
